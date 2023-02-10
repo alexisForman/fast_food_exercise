@@ -1,0 +1,36 @@
+<p>
+Exercise 1.3: Fast Food Customer Satisfaction Survey </br>
+Generate a new project called rails_fast_food_exercise  </br>
+
+Define 3 routes of the following
+/survey/rating
+/survey/multiple-choice-questions
+/survey/open-ended-feedback
+/end
+All routes should handle GET requests and target a controller called "Survey". Add a namespace for the survey path.
+
+Define each action and render the related view templates.
+
+Each path except 'end' will include a form in the view templates. Do this in order
+rating
+
+Allow the user to rate the overall experience they had from 1 - 10.
+After the user rates his/her overall experience, allow the user to submit and target the multiple-choice-questions controller.
+
+multiple-choice-questions In the controller action, for multiple-choice-questions, use the session instance to store information of the user input. Here's an example,
+
+  def multiple_choice_question
+    session[:rating] = params[:rating] 
+  end
+A session is a way to store information that can persist across multiple requests. It's used to maintain state between requests made by the same user.
+
+Follow the same process for the rest of the actions.
+
+In the template,
+
+Allow the user to rate the quality and how likely they are likely to recommend to a friend.
+open-ended-feedback
+
+Allow the user to include any feedback.
+end In the end action, render a template that will show all the information of the previous input of what the user entered.
+</p>
